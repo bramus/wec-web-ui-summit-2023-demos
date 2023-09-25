@@ -1,0 +1,21 @@
+{
+	"name": "web-web-ui-summit",
+	"version": "0.0.1",
+	"description": "WEC Web UI Summit 2023 Demos",
+	"scripts": {
+		"start": "http-server src -p 3000 --no-dotfiles -c-1",
+		"lint": "prettier --check '{src,test,cli}/**/*.{ts,tsx,js,jsx,html,css}'",
+		"format": "prettier --write '{src,test,cli}/**/*.{ts,tsx,js,jsx,html,css}'",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": {
+		"name": "Bramus Van Damme",
+		"email": "bramus@google.com",
+		"twitter": "@bramus"
+	},
+	"license": "Apache-2.0",
+	"devDependencies": {
+		"http-server": "^14",
+		"prettier": "^3.0.3"
+	}
+}
