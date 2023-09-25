@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS :has() Demo</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="scripts.js" type="module"></script>
+	</head>
+	<body>
+		<header>
+			<h1>CSS :has() Demo</h1>
+		</header>
+		<main>
+			<div class="banner">
+				<div class="col">
+					<div class="info">
+						<div class="top">
+							<h1>Simply<br />powerful.<br />Super helpful.</h1>
+							<a class="button" href="#">Buy</a>
+						</div>
+						<div class="bottom">
+							<ul class="colorpicker">
+								<li>
+									<label for="lemongrass"><input type="radio" name="color" id="lemongrass" checked /><span class="sr-only">Lemongrass</span></label>
+								</li>
+								<li>
+									<label for="snow"><input type="radio" name="color" id="snow" /><span class="sr-only">Snow</span></label>
+								</li>
+								<li>
+									<label for="obsidian"><input type="radio" name="color" id="obsidian" /><span class="sr-only">Obsidian</span></label>
+								</li>
+							</ul>
+							<output>
+								Color:
+								<span data-show="lemongrass">Lemongrass</span>
+								<span data-show="snow">Snow</span>
+								<span data-show="obsidian">Obsidian</span>
+							</output>
+						</div>
+					</div>
+					<div class="photo">
+						<img data-show="lemongrass" src="img/lemongrass.webp" alt="Pixel 7, Lemongrass color" width="1652" height="1200" />
+						<img data-show="snow" src="img/snow.webp" alt="Pixel 7, Snow color" width="1652" height="1200" />
+						<img data-show="obsidian" src="img/obsidian.webp" alt="Pixel 7, Obsidian color" width="1652" height="1200" />
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p>Example URL: <a href="https://store.google.com/us/product/pixel_7?hl=en-US">Pixel 7 – Google Store</a></p>
+		</footer>
+	</body>
+</html>
