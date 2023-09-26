@@ -1,52 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Scroll-Driven Animations Demo: Shrinking Header</title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<header>
-		<div class="limited">
-			<div class="bg"></div>
-			<div class="info">
-				<img src="https://brm.us/avatar" alt="Bramus" height="200" width="200" class="avatar">
-				<div>
-					<h2>Bramus</h2>
-					<ul class="meta">
-						<li>Developer Relations Engineer</li>
-						<li>bramus</li>
-						<li>he/him</li>
-					</ul>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Scroll-Driven Animations Demo: Shrinking Header</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<div class="limited">
+				<div class="bg"></div>
+				<div class="info">
+					<img src="https://brm.us/avatar" alt="Bramus" height="200" width="200" class="avatar" />
+					<div>
+						<h2>Bramus</h2>
+						<ul class="meta">
+							<li>Developer Relations Engineer</li>
+							<li>bramus</li>
+							<li>he/him</li>
+						</ul>
+					</div>
 				</div>
+				<a href="#" class="button button--circle" id="button-edit">✎</a>
 			</div>
-			<a href="#" class="button button--circle" id="button-edit">✎</a>
-		</div>
-	</header>
-	<div class="header-spacer"></div>
-	<main class="limited">
-		<div class="col">
-			<div class="warning">
-				<p>⚠️ Your browser does not support Scroll-driven Animations. Please use Chrome 115 or newer.</p>
+		</header>
+		<div class="header-spacer"></div>
+		<main class="limited">
+			<div class="col">
+				<div class="warning">
+					<p>⚠️ Your browser does not support Scroll-driven Animations. Please use Chrome 115 or newer.</p>
+				</div>
+				<div class="box" style="height: 20vh"></div>
+				<div class="box" style="height: 5vh"></div>
+				<div class="box"></div>
+				<div class="box" style="height: 50vh"></div>
+				<div class="box"></div>
+				<div class="box" style="height: 35vh"></div>
 			</div>
-			<div class="box" style="height: 20vh"></div>
-			<div class="box" style="height: 5vh"></div>
-			<div class="box"></div>
-			<div class="box" style="height: 50vh"></div>
-			<div class="box"></div>
-			<div class="box" style="height: 35vh"></div>
-		</div>
-		<div class="col">
-			<div class="box" style="height: 10vh"></div>
-			<div class="box"></div>
-			<div class="box" style="height: 4vh"></div>
-		</div>
-	</main>
-	<footer>
-		<div class="limited">
-			<p><small><em><a href="https://www.vecteezy.com/free-vector/city-landscape-line">City Landscape Line</a> image by Vecteezy</em></small></p>
-		</div>
-	</footer>
-</body>
+			<div class="col">
+				<div class="box" style="height: 10vh"></div>
+				<div class="box"></div>
+				<div class="box" style="height: 4vh"></div>
+			</div>
+		</main>
+		<footer>
+			<div class="limited">
+				<p>
+					<small
+						><em><a href="https://www.vecteezy.com/free-vector/city-landscape-line">City Landscape Line</a> image by Vecteezy</em></small
+					>
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>

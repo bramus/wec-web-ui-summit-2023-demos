@@ -17,10 +17,10 @@
 	align-items: center;
 
 	&:hover {
-		background: var(--button-bg-hover, #0047AB);
+		background: var(--button-bg-hover, #0047ab);
 	}
 	&:active {
-		background: var(--button-bg-active, #0096FF);
+		background: var(--button-bg-active, #0096ff);
 	}
 	&:focus-visible {
 		outline: 2px solid var(--button-bg, blue);
@@ -44,7 +44,6 @@
 		scale: 1.12;
 	}
 }
-
 
 @layer reset {
 	html,

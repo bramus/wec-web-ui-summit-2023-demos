@@ -86,7 +86,6 @@ html {
 	}
 }
 
-
 @layer compononents {
 	@layer warning {
 		.warning {
@@ -123,8 +122,8 @@ html {
 			}
 		}
 
-		@supports(animation-range: 0vh 90vh) {
-			.warning[data-bug="1427062"] {
+		@supports (animation-range: 0vh 90vh) {
+			.warning[data-bug='1427062'] {
 				display: none;
 			}
 		}
