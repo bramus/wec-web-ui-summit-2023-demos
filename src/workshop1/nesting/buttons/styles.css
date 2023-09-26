@@ -1,0 +1,78 @@
+@layer reset, layout;
+
+.button {
+	font-size: 2em;
+	margin: 0.5em;
+	border-radius: 0.25em;
+	background: var(--button-bg, blue);
+	color: var(--button-text, white);
+	text-decoration: none;
+	padding: 0.35em 0.75em;
+	transition: background 0.25s ease;
+	border: 1px solid rgb(0 0 0 / 0.15);
+
+	display: flex inline;
+	flex-direction: row;
+	gap: 0.5em;
+	align-items: center;
+
+	&:hover {
+		background: var(--button-bg-hover, #0047AB);
+	}
+	&:active {
+		background: var(--button-bg-active, #0096FF);
+	}
+	&:focus-visible {
+		outline: 2px solid var(--button-bg, blue);
+		outline-offset: 2px;
+	}
+
+	&.button--danger {
+		--button-bg: #dc3545;
+		--button-bg-hover: darkred;
+		--button-bg-active: red;
+	}
+
+	& img {
+		height: 1em;
+		width: auto;
+		aspect-ratio: 1;
+		transition: all 0.25s ease;
+	}
+
+	&:is(:hover, :focus-visible) img {
+		scale: 1.12;
+	}
+}
+
+
+@layer reset {
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	:is(ul, ol)[class] {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+@layer layout {
+	body {
+		background: #efeae6;
+		font-family: 'Google Sans', Roboto, Arial, sans-serif;
+	}
+	body {
+		display: grid;
+		place-content: center;
+		text-align: center;
+	}
+}
