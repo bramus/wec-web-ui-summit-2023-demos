@@ -1,84 +1,21 @@
 @layer layout, videocard, resizer;
 
 /* Activate containers + stretch its direct child so that the child takes up the same space */
-.container {
-	container-type: inline-size;
-}
-
-.infobox {
-	font-size: max(6cqw, 0.8em);
-}
-
-/* Mid Videocard Size */
-@container (width >= 24rem) {
-	/* Tweak flex proportions as container gets bigger */
-	.videocard > .container:has(.infobox, .player) {
-		flex: 1;
-	}
-}
+/* TODO: … */
 
 /* Mid Infobox */
 @container (14rem < width < 40rem) {
-	.infobox {
-		grid-template-areas:
-			'tags'
-			'title'
-			'channel'
-			'meta';
-		margin: 0.25em 0;
-	}
+	/* TODO: … */
 }
 
 /* Mid + Large Infobox */
 @container (width >= 14rem) {
-	/* Show full views number */
-	.video__meta .views--short {
-		display: none;
-	}
-	.video__meta .views--long {
-		display: inline;
-	}
-
-	/* Show tags */
-	.video__tags {
-		display: block;
-	}
+	/* TODO: … */
 }
 
 /* Large Videocard + Large Infobox Size */
 @container (width >= 40rem) {
-	/* Position the .player above the .infobox */
-	.videocard {
-		flex-direction: column;
-		gap: 0.5cqh;
-	}
-
-	/* Change infobox layout */
-	.infobox {
-		font-size: clamp(0.8em, 3cqw, 1.5em);
-		grid-template-areas:
-			'tags'
-			'title'
-			'meta';
-		gap: 0;
-		margin: 0.5em 0;
-	}
-
-	.video__tags {
-		display: block;
-	}
-
-	.video__title {
-		font-weight: 400;
-	}
-
-	.video__channel {
-		display: none;
-	}
-
-	.video__meta {
-		margin-top: 1rem;
-	}
+	/* TODO: … */
 }
 
 @layer layout {

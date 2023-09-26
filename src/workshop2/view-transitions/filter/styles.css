@@ -1,47 +1,11 @@
 @layer reset, layout, transitions;
 
 @layer transitions {
-	.offer:nth-child(1) {
-		view-transition-name: offer-1;
-	}
-	.offer:nth-child(2) {
-		view-transition-name: offer-2;
-	}
-	.offer:nth-child(3) {
-		view-transition-name: offer-3;
-	}
-	.offer:nth-child(4) {
-		view-transition-name: offer-4;
-	}
-	.offer:nth-child(5) {
-		view-transition-name: offer-5;
-	}
-	.offer:nth-child(6) {
-		view-transition-name: offer-6;
-	}
-	.offer:nth-child(7) {
-		view-transition-name: offer-7;
-	}
-	.offer:nth-child(8) {
-		view-transition-name: offer-8;
-	}
-	.offer:nth-child(9) {
-		view-transition-name: offer-9;
-	}
-	.offer:nth-child(10) {
-		view-transition-name: offer-10;
-	}
+	/* TODO: Give each offer a unique view-transition-name */
 
-	::view-transition-group(*) {
-		animation-duration: 1s;
-	}
+	/* TODO: Make it all slower */
 
-	:root {
-		view-transition-name: none;
-	}
-	::view-transition {
-		pointer-events: none;
-	}
+	/* TODO: Allow fast clicking */
 }
 
 @layer reset {

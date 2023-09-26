@@ -6,6 +6,15 @@
 		<title>[popover] Demo</title>
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="source" href="https://codepen.io/web-dot-dev/pen/OJBoLNb" />
+		<script type="module">
+			// TODO: Remove the JS and use a popover instead
+			document.querySelector('#size-guide-btn').addEventListener('click', (e) => {
+				document.querySelector('#size-guide').showModal();
+			});
+			document.querySelector('#size-guide .close-btn').addEventListener('click', (e) => {
+				document.querySelector('#size-guide').close();
+			});
+		</script>
 	</head>
 
 	<body>
@@ -63,7 +72,7 @@
 								<label for="size-xxl">XXL</label>
 							</li>
 						</ul>
-						<button id="size-guide-btn" popovertarget="size-guide">Size Guide</button>
+						<button id="size-guide-btn">Size Guide</button>
 					</div>
 					<form class="add-to-cart-form">
 						<label class="quantity-label" for="quantity"><b>Quantity:</b></label>
@@ -75,8 +84,8 @@
 				</div>
 			</div>
 
-			<div id="size-guide" popover>
-				<button class="close-btn" popovertarget="size-guide" popovertargetaction="hide">
+			<dialog id="size-guide">
+				<button class="close-btn">
 					<span aria-hidden="true">❌</span>
 					<p class="sr-only">Close</p>
 				</button>
@@ -154,7 +163,7 @@
 						<li><b>Hips:</b> Stand with your feet together. Place the measuring tape around the fullest part of your hips</li>
 					</ul>
 				</div>
-			</div>
+			</dialog>
 		</main>
 
 		<footer>

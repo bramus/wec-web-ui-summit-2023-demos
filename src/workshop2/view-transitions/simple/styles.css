@@ -1,16 +1,9 @@
 @layer reset, layout, transitions;
 
 @layer transitions {
-	::view-transition-group(*) {
-		animation-duration: 2s;
-	}
+	/* TODO: Slow it all down */
 
-	::view-transition-old(*) {
-		animation-name: -ua-view-transition-fade-out, scale-down;
-	}
-	::view-transition-new(*) {
-		animation-name: -ua-view-transition-fade-in, scale-up;
-	}
+	/* TODO: Use scale-down on ::old, and scale-up on ::new */
 
 	@keyframes scale-down {
 		to {

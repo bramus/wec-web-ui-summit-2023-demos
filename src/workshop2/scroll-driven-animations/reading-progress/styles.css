@@ -24,15 +24,10 @@
 }
 
 /* Create scroll-timeline on the root */
-html {
-	scroll-timeline: --page-scroll block;
-}
+/* TODO: … */
 
 /* Attach the animation using an anonymous Scroll Progress Timeline */
-#progress {
-	animation: grow-progress auto linear;
-	animation-timeline: --page-scroll;
-}
+/* TODO: … */
 
 @layer layout {
 	html,

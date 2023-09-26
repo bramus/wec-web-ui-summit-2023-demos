@@ -11,17 +11,6 @@ function setRandomAlignments() {
 }
 
 document.body.addEventListener('click', (e) => {
-	console.log('click');
-	if (!document.startViewTransition) setRandomAlignments();
-	else {
-		const transition = document.startViewTransition(() => {
-			setRandomAlignments();
-		});
-		transition.updateCallbackDone.then(() => {
-			console.log('updateCallbackDone');
-		});
-		transition.finished.then(() => {
-			console.log('finished');
-		});
-	}
+	// TODO: Enable View Transitions
+	setRandomAlignments();
 });

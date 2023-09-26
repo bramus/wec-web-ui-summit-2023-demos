@@ -1,19 +1,11 @@
 @layer reset, layout, transitions;
 
 @layer transitions {
-	:root {
-		view-transition-name: none;
-	}
-	::view-transition {
-		pointer-events: none;
-	}
+	/* TODO: Slow it all down */
 
-	::view-transition-group(*) {
-		animation-duration: 2s;
-	}
-	.box {
-		view-transition-name: box;
-	}
+	/* TODO: Give the box a view-transition-name */
+
+	/* TODO: Enable fast clicking */
 }
 
 @layer reset {

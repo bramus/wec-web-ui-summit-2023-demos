@@ -31,40 +31,11 @@
 }
 
 @supports (animation-timeline: scroll()) {
-	.info {
-		animation: adjust-info linear both;
-	}
-	.info h2 {
-		animation: shrink-name linear both;
-	}
-	header {
-		animation: add-shadow linear both;
-	}
-	#button-edit {
-		animation: move-button linear both;
-	}
-	.bg {
-		animation: move-and-fade-background linear both;
-	}
+	/* TODO: Set up animations … */
 
-	header {
-		position: fixed;
-		left: 0;
-		right: 0;
-	}
+	/* TODO: … link all animations to 1 timeline */
 
-	.header-spacer {
-		height: 190px;
-	}
-
-	.info,
-	h2,
-	header,
-	#button-edit,
-	.bg {
-		animation-timeline: scroll();
-		animation-range: 0 150px;
-	}
+	/* TODO: Reserve space for header. */
 }
 
 @supports not (animation-timeline: scroll()) {

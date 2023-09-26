@@ -1,5 +1,6 @@
 @layer reset, layout;
 
+/* TODO: Rewrite .button with nesting */
 .button {
 	font-size: 2em;
 	margin: 0.5em;
@@ -15,34 +16,34 @@
 	flex-direction: row;
 	gap: 0.5em;
 	align-items: center;
+}
 
-	&:hover {
-		background: var(--button-bg-hover, #0047ab);
-	}
-	&:active {
-		background: var(--button-bg-active, #0096ff);
-	}
-	&:focus-visible {
-		outline: 2px solid var(--button-bg, blue);
-		outline-offset: 2px;
-	}
+.button:hover {
+	background: var(--button-bg-hover, #0047ab);
+}
+.button:active {
+	background: var(--button-bg-active, #0096ff);
+}
+.button:focus-visible {
+	outline: 2px solid var(--button-bg, blue);
+	outline-offset: 2px;
+}
 
-	&.button--danger {
-		--button-bg: #dc3545;
-		--button-bg-hover: darkred;
-		--button-bg-active: red;
-	}
+.button--danger {
+	--button-bg: #dc3545;
+	--button-bg-hover: darkred;
+	--button-bg-active: red;
+}
 
-	& img {
-		height: 1em;
-		width: auto;
-		aspect-ratio: 1;
-		transition: all 0.25s ease;
-	}
+.button img {
+	height: 1em;
+	width: auto;
+	aspect-ratio: 1;
+	transition: all 0.25s ease;
+}
 
-	&:is(:hover, :focus-visible) img {
-		scale: 1.12;
-	}
+.button:is(:hover, :focus-visible) img {
+	scale: 1.12;
 }
 
 @layer reset {

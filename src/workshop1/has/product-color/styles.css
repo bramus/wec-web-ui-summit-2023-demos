@@ -3,29 +3,13 @@
 @layer demo {
 	.banner {
 		/* Set correct background color based on selected option */
-		&:has(#lemongrass:checked) {
-			background: var(--lemongrass);
-		}
-		&:has(#snow:checked) {
-			background: var(--snow);
-		}
-		&:has(#obsidian:checked) {
-			background: var(--obsidian);
-		}
+		/* TODO: … */
 
 		/* Show relevant items based on selected option */
 		[data-show] {
 			display: none;
 		}
-		&:has(#lemongrass:checked) [data-show='lemongrass'] {
-			display: inline;
-		}
-		&:has(#snow:checked) [data-show='snow'] {
-			display: inline;
-		}
-		&:has(#obsidian:checked) [data-show='obsidian'] {
-			display: inline;
-		}
+		/* TODO: … */
 	}
 }
 

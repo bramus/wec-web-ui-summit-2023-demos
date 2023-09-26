@@ -5,12 +5,6 @@ const nextSentence = () => {
 };
 
 document.addEventListener('click', (e) => {
-	if (!document.startViewTransition) {
-		nextSentence();
-		return;
-	}
-
-	document.startViewTransition(() => {
-		nextSentence();
-	});
+	// TODO: Enable View Transitions
+	nextSentence();
 });

@@ -2,13 +2,7 @@
 
 @layer demo {
 	.photo {
-		animation:
-			animate-in ease-in backwards,
-			animate-out ease-in forwards;
-		animation-timeline: view(), view();
-		animation-range:
-			entry 25% entry 125%,
-			exit -25% exit 75%;
+		/*TODO: animate-in on entry 25%..125%, and animate-out on exit -25%..75% */
 	}
 
 	@keyframes animate-in {
