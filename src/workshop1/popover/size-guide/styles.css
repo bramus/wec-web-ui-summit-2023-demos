@@ -1,0 +1,279 @@
+@layer reset, layout, demo, util;
+
+@layer demo {
+	/* Popover things */
+	#size-guide::backdrop {
+		background: rgba(190, 190, 190, 0.5);
+	}
+
+	#size-guide {
+		padding: 3rem;
+		border: none;
+		width: clamp(300px, 80vw, 600px);
+		max-height: 480px;
+	}
+
+	#size-guide h2 {
+		margin: 0 0 1rem;
+	}
+
+	.close-btn {
+		filter: grayscale();
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: none;
+		border: none;
+		font-size: 1.25rem;
+	}
+
+	/* Animating */
+	#size-guide {
+		&:popover-open {
+			/*   0. BEFORE-OPEN STATE   */
+			/*  initial state for what we're animating *in* from,
+			in this case: goes from lower (y + 20px) to center  */
+			@starting-style {
+				transform: translateY(20px);
+				opacity: 0;
+			}
+
+			/*   1. OPEN STATE   */
+			/*  state when popover is open, BOTH:
+			what we're transitioning *in* to
+			and transitioning *out* from */
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		/*   2. AFTER-OPEN-IS-CLOSED STATE   */
+		/*  initial state for what we're animating *out* to ,
+			in this case: goes from center to (y - 50px) higher */
+		transform: translateY(-50px);
+		opacity: 0;
+
+		/*  enumarate transitioning properties, including display */
+		transition:
+			transform 0.5s,
+			opacity 0.5s,
+			display 0.5s;
+		transition-behavior: allow-discrete;
+	}
+}
+
+@layer layout {
+	@layer general {
+		body {
+			background: #efeae6;
+			font-family: 'Google Sans', Roboto, Arial, sans-serif;
+			padding-top: 3rem;
+		}
+		header,
+		footer {
+			text-align: center;
+		}
+		main {
+			margin: 2em auto;
+			width: 90%;
+			max-width: 90em;
+		}
+	}
+
+	/* Style things */
+	:root {
+		--blue: #4a9fe0;
+		--darkblue: #616183;
+		--gray-bg: #f0f0f0;
+		--peppermint: #e9f2e1;
+		--lightgreen: #fdfdf9;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th,
+	td {
+		border: 1px solid #ccc;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	th {
+		background-color: var(--peppermint);
+		font-weight: 400;
+	}
+
+	td {
+		background-color: var(--lightgreen);
+		font-weight: 300;
+	}
+
+	h2 {
+		margin-bottom: 0;
+		font-size: 1.6rem;
+		letter-spacing: 2px;
+		font-weight: 400;
+	}
+
+	small {
+		max-width: 25ch;
+		display: inline-block;
+	}
+
+	.price {
+		font-size: 1.4rem;
+		font-weight: 300;
+		margin-bottom: 0.5rem;
+	}
+
+	hr {
+		margin: 1rem 0;
+		border-color: lightgray;
+		border-top: none;
+	}
+
+	a,
+	#size-guide-btn {
+		font-family: 'Roboto Mono', monospace;
+		color: var(--blue);
+	}
+
+	#size-guide-btn {
+		border: 0;
+		background: none;
+		text-decoration: underline;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	body {
+		padding: 1rem;
+	}
+
+	figure {
+		min-width: 300px;
+		margin: 0;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	.size-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 0 0 1rem;
+	}
+
+	.size-list label {
+		background: var(--gray-bg);
+		padding: 0.5rem 1rem;
+		display: inline-block;
+	}
+
+	.size-list input {
+		display: none;
+	}
+
+	.size-list label:hover,
+	.size-list label:focus {
+		color: var(--blue);
+		outline: 1px solid;
+	}
+
+	.size-list li:has(:checked) {
+		outline: 1px solid;
+	}
+
+	.product {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 0 auto;
+		max-width: 900px;
+		border: 1px solid #999;
+	}
+
+	.product-img {
+		display: flex;
+	}
+
+	.product-info {
+		padding: 1rem;
+	}
+
+	.color-list {
+		margin-top: 1rem;
+		padding: 0;
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.color-list li {
+		font-size: 0;
+		width: 1rem;
+		height: 1rem;
+		display: inline-block;
+		border-radius: 50%;
+		position: relative;
+		border: 1px solid;
+	}
+
+	.quantity-label {
+		display: block;
+		margin: 1rem 0 0.5rem;
+	}
+
+	#quantity {
+		font-size: 1.3rem;
+		max-width: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.add-to-cart-btn {
+		border: 1px solid;
+		font-weight: lighter;
+		padding: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		width: 100%;
+		background: var(--darkblue);
+		color: white;
+	}
+
+	.measurements {
+		margin-top: 2rem;
+	}
+
+	.measurements-guide li {
+		line-height: 1.5;
+		list-style: disc;
+		margin-left: 2rem;
+		margin-top: 1rem;
+	}
+}
+
+@layer util {
+	.sr-only:not(:focus):not(:active) {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+}

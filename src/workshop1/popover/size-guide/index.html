@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>[popover] Demo</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="source" href="https://codepen.io/web-dot-dev/pen/OJBoLNb">
+</head>
+
+<body>
+	<header>
+		<h1>[popover] Demo</h1>
+	</header>
+
+	<main>
+		<div class="product">
+			<div class="product-img">
+				<figure><img src="img/dress.jpeg" alt="The Jessica Gown" width="687" height="1031"></figure>
+			</div>
+			<div class="product-info">
+				<h2>The Jessica Gown</h2>
+				<a class="brand" href="#">Disco & Co.</a>
+				<p class="price">$2399.95</p>
+				<small>Or 4 interest-free installments of $599.99 with <a href="#">MeowCatPay</a></small>
+				<hr />
+				<div class="color-options">
+					<p class="preview"><b>Color:</b> White</p>
+					<ul class="color-list">
+						<li class="color" style="background: white;">white</li>
+						<li class="color" style="background: beige;">beige</li>
+					</ul>
+				</div>
+				<div class="size-options">
+					<p><b>Size:</b></p>
+					<ul class="size-list">
+						<li>
+							<input type="radio" name="selectedSize" id="size-xxs" value="xxs">
+							<label for="size-xxs">XXS</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-xs" value="xs">
+							<label for="size-xs">XS</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-s" value="s">
+							<label for="size-s">S</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-m" value="m">
+							<label for="size-m">M</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-l" value="l">
+							<label for="size-l">L</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-xl" value="xl">
+							<label for="size-xl">XL</label>
+						</li>
+						<li>
+							<input type="radio" name="selectedSize" id="size-xxl" value="xxl">
+							<label for="size-xxl">XXL</label>
+						</li>
+					</ul>
+					<button id="size-guide-btn" popovertarget="size-guide">Size Guide</button>
+				</div>
+				<form class="add-to-cart-form">
+					<label class="quantity-label" for="quantity"><b>Quantity:</b></label>
+					<input type="number" id="quantity" value="1">
+					<button class="add-to-cart-btn" type="submit">Add to Cart</button>
+				</form>
+				<p>Free Shipping on Orders $150+</p>
+				<p>Please select a size to check store availability.</p>
+
+			</div>
+		</div>
+
+		<div id="size-guide" popover>
+			<button class="close-btn" popovertarget="size-guide" popovertargetaction="hide">
+				<span aria-hidden="true">❌</span>
+				<p class="sr-only">Close</p>
+			</button>
+			<h2>Size Guide: Dresses</h2>
+			<table border="0" cellpadding="2" cellspacing="2">
+				<thead>
+					<tr>
+						<th></th>
+						<th>XXS</th>
+						<th>XS</th>
+						<th>S</th>
+						<th>M</th>
+						<th>L</th>
+						<th>XL</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th scope="row">US Size (Numeric)</th>
+						<td>00</td>
+						<td>0<br>2</td>
+						<td>4<br>6</td>
+						<td>8<br>10</td>
+						<td>12<br>14</td>
+						<td>16</td>
+					</tr>
+					<tr>
+						<th scope="row">Bust</th>
+						<td>32</td>
+						<td>33<br>34</td>
+						<td>35<br>36</td>
+						<td>37<br>38</td>
+						<td>39.5<br>41</td>
+						<td>42.5</td>
+					</tr>
+					<tr>
+						<th scope="row">Natural Waist</th>
+						<td>24</td>
+						<td>25<br>26</td>
+						<td>27<br>28</td>
+						<td>29<br>30</td>
+						<td>31.5<br>33</td>
+						<td>34.5</td>
+					</tr>
+					<tr>
+						<th scope="row">Drop Waist</th>
+						<td>26</td>
+						<td>27<br>28</td>
+						<td>29<br>30</td>
+						<td>31<br>32</td>
+						<td>33.5<br>35</td>
+						<td>36.5</td>
+					</tr>
+					<tr>
+						<th scope="row">Hips</th>
+						<td>34</td>
+						<td>35<br>36</td>
+						<td>37<br>38</td>
+						<td>39<br>40</td>
+						<td>41.5<br>43</td>
+						<td>44.5</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="measurements">
+				<h2>How to take measurements</h2>
+				<ul class="measurements-guide">
+					<li><b>Bust:</b> Stand with your arms relaxed at your sides. Place the measuring tape under your arms, at the fullest part of your bust. Keep the tape level across your shoulder blades.</li>
+					<li><b>Natural Waist:</b> Stand up straight and find the natural crease of your waist. Place the measuring tape around your waist, keeping the tape comfortably loose.</li>
+					<li><b>Drop Waist:</b> Measure around your body 1 1/2 inches below your natural waist.</li>
+					<li><b>Hips:</b> Stand with your feet together. Place the measuring tape around the fullest part of your hips</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+
+	<footer>Original Demo: <a href="https://codepen.io/web-dot-dev/pen/OJBoLNb">https://codepen.io/web-dot-dev/pen/OJBoLNb</a> by <a href="https://twitter.com/una">Una</a>.<br>Photo from Unsplash</footer>
+</body>
+</html>
