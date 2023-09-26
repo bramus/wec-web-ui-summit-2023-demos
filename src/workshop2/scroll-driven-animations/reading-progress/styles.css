@@ -1,0 +1,132 @@
+@layer layout, components;
+
+/* The keyframes */
+@keyframes grow-progress {
+	from {
+		transform: scaleX(0);
+	}
+
+	to {
+		transform: scaleX(1);
+	}
+}
+
+/* Style and position the progress bar */
+#progress {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1em;
+	transform-origin: 0 50%;
+	background: red;
+}
+
+/* Create scroll-timeline on the root */
+html {
+	scroll-timeline: --page-scroll block;
+}
+
+/* Attach the animation using an anonymous Scroll Progress Timeline */
+#progress {
+	animation: grow-progress auto linear;
+	animation-timeline: --page-scroll;
+}
+
+@layer layout {
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font-size: clamp(1.1em, calc(0.5em + 1vw), 3em);
+		line-height: 1.42;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	}
+
+	main {
+		font-weight: 300;
+		width: 90vw;
+		max-width: 40em;
+		margin: 0 auto;
+		padding: 4rem 0;
+	}
+
+	main img {
+		width: 100%;
+		height: auto;
+	}
+
+	main :is(h1, h2, h3) {
+		font-family: Georgia, 'Times New Roman', Times, serif;
+	}
+
+	main h1 {
+		font-size: 3em;
+	}
+
+	main h2 {
+		font-size: 2em;
+		margin-top: 5rem;
+		border-bottom: 1px solid #ccc;
+	}
+
+	a,
+	a:visited {
+		color: blue;
+	}
+
+	figcaption {
+		text-align: center;
+		font-style: italic;
+		font-size: 75%;
+	}
+}
+
+
+@layer compononents {
+	@layer warning {
+		.warning {
+			box-sizing: border-box;
+			padding: 1em;
+			margin: 1em 0;
+			border: 1px solid #ccc;
+			background: rgba(255 255 205 / 0.8);
+		}
+
+		.warning > :first-child {
+			margin-top: 0;
+		}
+
+		.warning > :last-child {
+			margin-bottom: 0;
+		}
+
+		.warning a {
+			color: blue;
+		}
+		.warning--info {
+			border: 1px solid #123456;
+			background: rgb(205 230 255 / 0.8);
+		}
+		.warning--alarm {
+			border: 1px solid red;
+			background: #ff000010;
+		}
+
+		@supports (animation-timeline: view()) {
+			.warning:not([data-bug]) {
+				display: none;
+			}
+		}
+
+		@supports(animation-range: 0vh 90vh) {
+			.warning[data-bug="1427062"] {
+				display: none;
+			}
+		}
+	}
+}
