@@ -1,0 +1,209 @@
+@layer layout, videocard, resizer;
+
+/* Activate containers + stretch its direct child so that the child takes up the same space */
+.container {
+	container-type: inline-size;
+}
+
+.infobox {
+	font-size: max(6cqw, 0.8em);
+}
+
+/* Mid Videocard Size */
+@container (width >= 24rem) {
+	/* Tweak flex proportions as container gets bigger */
+	.videocard > .container:has(.infobox, .player) {
+		flex: 1;
+	}
+}
+
+/* Mid Infobox */
+@container (14rem < width < 40rem) {
+	.infobox {
+		grid-template-areas:
+			'tags'
+			'title'
+			'channel'
+			'meta';
+		margin: 0.25em 0;
+	}
+}
+
+/* Mid + Large Infobox */
+@container (width >= 14rem) {
+	/* Show full views number */
+	.video__meta .views--short {
+		display: none;
+	}
+	.video__meta .views--long {
+		display: inline;
+	}
+
+	/* Show tags */
+	.video__tags {
+		display: block;
+	}
+}
+
+/* Large Videocard + Large Infobox Size */
+@container (width >= 40rem) {
+	/* Position the .player above the .infobox */
+	.videocard {
+		flex-direction: column;
+		gap: 0.5cqh;
+	}
+
+	/* Change infobox layout */
+	.infobox {
+		font-size: clamp(0.8em, 3cqw, 1.5em);
+		grid-template-areas:
+			'tags'
+			'title'
+			'meta';
+		gap: 0;
+		margin: 0.5em 0;
+	}
+
+	.video__tags {
+		display: block;
+	}
+
+	.video__title {
+		font-weight: 400;
+	}
+
+	.video__channel {
+		display: none;
+	}
+
+	.video__meta {
+		margin-top: 1rem;
+	}
+}
+
+@layer layout {
+	.thumbnail {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	/* Flat lists */
+	.flatlist {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		display: flex;
+		--gap: 0.5cqw;
+		gap: var(--gap);
+	}
+
+	.flatlist--dotted li:not(:first-child)::before {
+		content: '·';
+		margin-right: var(--gap);
+	}
+
+	/* General Styling */
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		margin: 0;
+		padding: 1em;
+	}
+}
+
+@layer videocard {
+	.container {
+		display: flex;
+	}
+	.container > * {
+		flex: 1;
+	}
+
+	/* Small Video Card Layout: .player next to the .infobox */
+	.videocard {
+		display: flex;
+		flex-direction: row;
+		gap: 1cqw;
+		align-items: stretch;
+	}
+	.videocard > * {
+		flex: 1;
+	}
+	.videocard > .container:has(.player) {
+		flex: 0.45;
+	}
+	.videocard > .container:has(.infobox) {
+		flex: 0.65;
+	}
+
+	/* The area where the player would be */
+	.player {
+		aspect-ratio: 16 / 9;
+		display: flex;
+		width: 100%;
+	}
+
+	/* The are with the info */
+	.infobox {
+		height: min-content;
+		display: grid;
+		grid-template-areas:
+			'title'
+			'channel'
+			'meta';
+		font-size: 0.8em;
+		gap: 0.25em;
+	}
+
+	.infobox > * {
+		margin: 0;
+		padding: 0;
+	}
+
+	.video__title {
+		grid-area: title;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.video__channel {
+		grid-area: channel;
+		font-size: 1em;
+		font-weight: 400;
+	}
+
+	.video__tags {
+		grid-area: tags;
+		font-size: 0.7em;
+		display: none;
+	}
+
+	.video__meta {
+		grid-area: meta;
+		font-size: 0.9em;
+		opacity: 0.6;
+	}
+
+	.video__meta .views--long {
+		display: none;
+	}
+}
+
+@layer resizer {
+	/* This allows you to resize the components it wraps. For demonstration purposes */
+	.resizer {
+		border-bottom: 1px solid #ccc;
+		resize: horizontal;
+		overflow: hidden;
+
+		min-width: 20rem;
+		max-width: 120rem;
+		width: 24rem;
+		margin-bottom: 1rem;
+	}
+
+	.resizer + .resizer {
+		width: 42rem;
+	}
+}
