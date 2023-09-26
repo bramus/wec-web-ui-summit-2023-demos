@@ -1,0 +1,66 @@
+@layer reset, layout, transitions;
+
+@layer transitions {
+	::view-transition-group(*) {
+		animation-duration: 2s;
+	}
+
+	::view-transition-old(*) {
+		animation-name: -ua-view-transition-fade-out, scale-down;
+	}
+	::view-transition-new(*) {
+		animation-name: -ua-view-transition-fade-in, scale-up;
+	}
+
+	@keyframes scale-down {
+		to {
+			scale: 0;
+		}
+	}
+
+	@keyframes scale-up {
+		from {
+			scale: 0;
+		}
+	}
+}
+
+@layer reset {
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	:is(ul, ol)[class] {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+@layer layout {
+	@layer general {
+		body {
+			background: #efeae6;
+			font-family: 'Google Sans', Roboto, Arial, sans-serif;
+		}
+		body {
+			display: grid;
+			place-content: center;
+			text-align: center;
+		}
+
+		p {
+			font-size: 10vmax;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+	}
+}
+
